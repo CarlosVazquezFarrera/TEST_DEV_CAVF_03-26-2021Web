@@ -3,7 +3,10 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  UrlApi: 'https://api.toka.com.mx/candidato/api/',
+  UrlApiToka: 'http://localhost:55737/api/',
+  errorApiMensaje: 'Error al conectar'
 };
 
 /*

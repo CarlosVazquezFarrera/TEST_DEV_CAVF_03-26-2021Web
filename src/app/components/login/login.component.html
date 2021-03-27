@@ -1,6 +1,6 @@
 <!-- Formulario -->
 <div>
-    <form   (ngSubmit)="registro($event)" 
+    <form   (ngSubmit)="login($event)" 
             [formGroup]="form"
             class="border-2 border-grey rounded-lg p-5 mx-24 lg:mx-64 xl:mx-96 mt-10">
         <!-- Usuario -->
@@ -9,15 +9,21 @@
                 <mat-label>Usuario</mat-label>
                 <input matInput  type="text" id="usuario" name="usuario" placeholder="Usuario"
                 formControlName="usuario"/>
+                <mat-error *ngIf="usuarioFiel.hasError('required')">
+                    Ingrese un <strong>Usuario</strong>
+                </mat-error>
               </mat-form-field>
         </div>
         <!-- Correo -->
         <div class="mt-2 flex flex-col">
             <mat-form-field class="example-full-width">
                 <mat-label>Contraseña</mat-label>
-                <input matInput  type="password" id="password" name="password" placeholder="Contraseña"
+                <input matInput  type="password" id="password" name="password" placeholder="password"
                 formControlName="password"/>
-              </mat-form-field>    
+                <mat-error *ngIf="passwordFiel.hasError('required')">
+                    Ingrese una <strong>Contraseña</strong>
+                </mat-error>
+              </mat-form-field>
         </div>
         <!-- Botón -->
         <div class="grid justify-items-stretch">
