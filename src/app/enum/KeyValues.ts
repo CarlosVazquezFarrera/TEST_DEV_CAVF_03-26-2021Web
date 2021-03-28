@@ -1,3 +1,4 @@
 export enum KeyValues {
-    token
+    token,
+    usuarioLogged
 }

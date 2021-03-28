@@ -11,11 +11,13 @@ import { MatButtonModule } from '@angular/material/button';
 import { HttpClientModule } from '@angular/common/http';
 
 import { LoginComponent } from './components/login/login.component';
+import { PersonaFisicaComponent } from './components/persona-fisica/persona-fisica.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    PersonaFisicaComponent
   ],
   imports: [
     BrowserModule,
