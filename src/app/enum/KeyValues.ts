@@ -1,4 +1,3 @@
-export enum KeyValues {
-    token,
-    usuarioLogged
+export const KeyValues = {
+    usuarioLogged: 'usuarioLogged'
 }
