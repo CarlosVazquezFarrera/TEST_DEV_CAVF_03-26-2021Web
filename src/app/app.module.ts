@@ -9,13 +9,32 @@ import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { HttpClientModule } from '@angular/common/http';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import {MatDialogModule} from '@angular/material/dialog';
 
 import { LoginComponent } from './components/login/login.component';
+<<<<<<< Updated upstream
+=======
+import { PersonaFisicaComponent } from './components/persona-fisica/persona-fisica.component';
+import { ActivopipePipe } from './pipes/activopipe.pipe';
+import { FechaactualizacionpipePipe } from './pipes/fechaactualizacionpipe.pipe';
+import { EditarPersonaDialogComponent } from './components/editar-persona-dialog/editar-persona-dialog.component';
+>>>>>>> Stashed changes
 
 @NgModule({
   declarations: [
     AppComponent,
+<<<<<<< Updated upstream
     LoginComponent
+=======
+    LoginComponent,
+    PersonaFisicaComponent,
+    ActivopipePipe,
+    FechaactualizacionpipePipe,
+    EditarPersonaDialogComponent,
+>>>>>>> Stashed changes
   ],
   imports: [
     BrowserModule,
@@ -24,7 +43,11 @@ import { LoginComponent } from './components/login/login.component';
     MatInputModule,
     ReactiveFormsModule,
     MatButtonModule,
-    HttpClientModule
+    HttpClientModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSnackBarModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]
