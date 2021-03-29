@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
-import { KeyValues } from 'src/app/enum/KeyValues';
 import { Response } from 'src/app/Models/Api/Response';
-import { Usuario } from 'src/app/Models/Usuario';
+import { Router } from '@angular/router';
+import { PersonaFisica } from 'src/app/Models/PersonaFisica';
 import { SessionServiceService } from 'src/app/services/session-service.service';
+
 import { TokaApiServiceService } from 'src/app/services/toka-api-service.service';
 import { environment } from 'src/environments/environment';
 import Swal from 'sweetalert2';
@@ -56,8 +56,10 @@ export class LoginComponent implements OnInit {
      */
   IniciarSesion():void{
     Swal.showLoading();
-    const usuario = new Usuario(this.usuarioFiel.value, this.passwordFiel.value);
-    this.servicioTokaApi.login(usuario).subscribe((loginResponseToken: Response<Usuario>)=>{
+    const usuario = new PersonaFisica();
+    usuario.correo = this.usuarioFiel.value;
+    usuario.password = this.passwordFiel.value;
+    this.servicioTokaApi.login(usuario).subscribe((loginResponseToken: Response<PersonaFisica>)=>{
     if (loginResponseToken.exito){ //Respuesta exitosa del api
       Swal.close();
       this.sessionService.login();

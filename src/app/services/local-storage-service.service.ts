@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { KeyValues } from '../enum/KeyValues';
+import { KeyValues } from '../KeyValues/KeyValues';
 
 @Injectable({
   providedIn: 'root'
@@ -12,8 +12,8 @@ export class LocalStorageServiceService {
    * @param valor 
    * Guarda un elemento (valor sencillo u objeto) en memoria
    */
-  guardarElemento<T>(key: KeyValues, valor: T): void{
-    sessionStorage.setItem(key.toString(), JSON.stringify(valor));
+  guardarElemento<T>(key: string, valor: T): void{
+    sessionStorage.setItem(key, JSON.stringify(valor));
   }
   
  /**
@@ -22,15 +22,15 @@ export class LocalStorageServiceService {
   * @returns Elemento de T
   * Obtiene de memoria un elemento en especial 
   */
-  obtenerElemento<T>(key: KeyValues): T{
-    let valor: T = JSON.parse(sessionStorage.getItem(key.toString()));
+  obtenerElemento<T>(key: string): T{
+    let valor: T = JSON.parse(sessionStorage.getItem(key));
     return valor
   }
   /**
   * Elimina un elemento en especial con base al elemento especificado
   */
-  borrarElemento(key: KeyValues){
-    sessionStorage.removeItem(key.toString());
+  borrarElemento(key: string){
+    sessionStorage.removeItem(key);
   }  
  /**
   *Borra todo lo que se encuentra en memoria 

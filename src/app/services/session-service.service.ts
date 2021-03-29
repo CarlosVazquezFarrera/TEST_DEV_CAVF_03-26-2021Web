@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { KeyValues } from '../enum/KeyValues';
+import { KeyValues } from '../KeyValues/KeyValues';
 import { LocalStorageServiceService } from './local-storage-service.service';
 
 @Injectable({

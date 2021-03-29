@@ -1,1 +1,65 @@
-<p>persona-fisica works!</p>
+<div class="mat-elevation-z8">
+    <table mat-table [dataSource]="personasFisicas">
+      <!-- fechaRegistro Column -->
+      <ng-container matColumnDef="fechaRegistro">
+        <th mat-header-cell *matHeaderCellDef> Fecha Registro </th>
+        <td mat-cell *matCellDef="let element"> {{element.fechaRegistro}} </td>
+      </ng-container>
+    
+      <!-- fechaActuliazacion Column -->
+      <ng-container matColumnDef="fechaActualizacion">
+        <th mat-header-cell *matHeaderCellDef> Fecha Actualizacion </th>
+        <td mat-cell *matCellDef="let element"> {{element.fechaActualizacion | fechaactualizacionpipe}} </td>
+      </ng-container>
+      <!-- Nombre Column -->
+      <ng-container matColumnDef="nombre">
+        <th mat-header-cell *matHeaderCellDef> Nombre </th>
+        <td mat-cell *matCellDef="let element"> {{element.nombre}} </td>
+      </ng-container>
+      <!-- Apellido Paterno Column -->
+      <ng-container matColumnDef="apellidoPaterno">
+        <th mat-header-cell *matHeaderCellDef> Apellido Paterno </th>
+        <td mat-cell *matCellDef="let element"> {{element.apellidoPaterno}} </td>
+      </ng-container>
+      <!-- Apellido materno Column -->
+      <ng-container matColumnDef="apellidoMaterno">
+        <th mat-header-cell *matHeaderCellDef> Apellido Materno </th>
+        <td mat-cell *matCellDef="let element"> {{element.apellidoMaterno}} </td>
+      </ng-container>
+      <!-- rfc Column -->
+      <ng-container matColumnDef="rfc">
+        <th mat-header-cell *matHeaderCellDef> RFC </th>
+        <td mat-cell *matCellDef="let element"> {{element.rfc}} </td>
+      </ng-container>
+      <!-- fechaNacimiento Column -->
+      <ng-container matColumnDef="fechaNacimiento">
+        <th mat-header-cell *matHeaderCellDef> FechaNacimiento </th>
+        <td mat-cell *matCellDef="let element"> {{element.fechaNacimiento}} </td>
+      </ng-container>
+
+      <!-- activo Column -->
+      <ng-container matColumnDef="activo">
+        <th mat-header-cell *matHeaderCellDef> Activo </th>
+        <td mat-cell *matCellDef="let element"> {{element.activo | activopipe}} </td>
+      </ng-container>
+      <!-- correo Column -->
+      <ng-container matColumnDef="correo">
+        <th mat-header-cell *matHeaderCellDef> Correo </th>
+        <td mat-cell *matCellDef="let element"> {{element.correo}} </td>
+      </ng-container>
+      <!-- Editar Colum -->
+      <ng-container matColumnDef="actualizar">
+        <th mat-header-cell *matHeaderCellDef> Actualizar </th>
+        <td mat-cell *matCellDef="let element"><button mat-raised-button (click)="desactivarPersona(element)">Eliminar</button></td>
+      </ng-container>
+      <ng-container matColumnDef="eliminar">
+        <th mat-header-cell *matHeaderCellDef> Eliminar </th>
+        <td mat-cell *matCellDef="let element"><button mat-raised-button (click)="editarPersona(element)">Actualizar</button></td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="columnas"></tr>
+      <tr mat-row *matRowDef="let row; columns: columnas;"></tr>
+    </table>
+    <mat-paginator [pageSizeOptions]="[20]" showFirstLastButtons></mat-paginator>
+  </div>
+

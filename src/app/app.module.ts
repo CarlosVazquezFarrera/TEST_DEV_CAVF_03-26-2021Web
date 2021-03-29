@@ -9,15 +9,28 @@ import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { HttpClientModule } from '@angular/common/http';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import {MatDialogModule} from '@angular/material/dialog';
 
 import { LoginComponent } from './components/login/login.component';
+
 import { PersonaFisicaComponent } from './components/persona-fisica/persona-fisica.component';
+import { ActivopipePipe } from './pipes/activopipe.pipe';
+import { FechaactualizacionpipePipe } from './pipes/fechaactualizacionpipe.pipe';
+import { EditarPersonaDialogComponent } from './components/editar-persona-dialog/editar-persona-dialog.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    PersonaFisicaComponent
+    PersonaFisicaComponent,
+    LoginComponent,
+    PersonaFisicaComponent,
+    ActivopipePipe,
+    FechaactualizacionpipePipe,
+    EditarPersonaDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -26,7 +39,11 @@ import { PersonaFisicaComponent } from './components/persona-fisica/persona-fisi
     MatInputModule,
     ReactiveFormsModule,
     MatButtonModule,
-    HttpClientModule
+    HttpClientModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSnackBarModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]
